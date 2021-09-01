@@ -8,11 +8,11 @@ from forms import AddPetForm, EditPetForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "q36spacemodulator"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql:///adopt" #update with created db info
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:Over9000@localhost:5432/adopt"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 connect_db(app)
-db.create_all()
+db.create_all() 
 
 toolbar = DebugToolbarExtensions(app)
 
